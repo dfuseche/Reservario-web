@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- ICON -->
+  <link rel="apple-touch-icon" sizes="57x57" href="./img/logo/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./img/logo//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./img/logo//apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/logo//apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./img/logo//apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./img/logo//apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./img/logo//apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./img/logo//apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/logo//apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./img/logo//android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/logo//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/logo//favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/logo//favicon-16x16.png">
+  <link rel="manifest" href="./img/logo//manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./img/logo//ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <script src="https://kit.fontawesome.com/6bd538481a.js" crossorigin="anonymous"></script>
+
+  <title>Reservario</title>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="header__logo" href="#">
+      <img class="header__pic" src="./img/Reservario.png" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" id="inicio">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="acerca-de-nosotros">Acerca de nosotros</a>
+        </li>
+      </ul>
+      <button class="btn-register my-2 my-sm-0">Registrarse</button>
+      <button class="btn-login my-2 my-sm-0">Iniciar sesión</button>
+      <button class="btn-logout my-2 my-sm-0">Cerrar sesión</button>
+      <a class="nav-session" href="#"></a>
+    </div>
+  </nav>
+  <!-- Secciones que no son de la Main Page (se cargan desde los templates) -->
+  <div class="register"></div>
+  <div class="login"></div>
+  <div class="reservar"></div>
+  <div class="select-tipo-establecimiento"></div>
+  <div class="select-restaurante"></div>
+  <div class="select-evento"></div>
+  <div class="select-centro-turistico"></div>
+  <div class="hacer-reserva"></div>
+  <div class="ver-reservas"></div>
+
+  <div class="create-restaurante"></div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 info__header">
+        <div class="header__title">
+          Haz todas tus reservas<br>en un solo <span class="header__title__color"> lugar</span>
+        </div><br>
+        <div class="header__paragraph">Lorem ipsum is placeholder text commonly used in the graphic, print, and
+          publishing
+        </div><br>
+        <div class="div__btn__reserve">
+          <button class="btn-reserve my-2 my-sm-0 col-md-5 col-10">¡Reserva ya!</button>
+          <button class="btn-see-reserves my-2 my-sm-0 col-md-5 col-10">Mis reservas</button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 img__header">
+        <img loading="lazy" class="main__pic" src="./img/header_img.png" alt="Header image">
+      </div>
+    </div>
+  </div>
+  <!-- CATEGORIAS -->
+  <div class="categories">
+    <div class="section__title">CATEGORIAS</div>
+    <div class="section__main__title">Te ofrecemos múltiples servicios</div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-12 col-md-4 col__cat__card">
+        <div class="cat__card">
+          <img loading="lazy" class="cat__card__head__pic" src="./img/cat-1.png" alt="Service 1">
+          <div class="cat__card__body">
+            <div class="cat__card__body__title">
+              Restaurantes
+            </div>
+            <div class="cat__card__body__text">
+              Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 col__cat__card">
+        <div class="cat__card">
+          <img loading="lazy" class="cat__card__head__pic" src="./img/cat-2.png" alt="Service 2">
+          <div class="cat__card__body">
+            <div class="cat__card__body__title">
+              Centros turísticos
+            </div>
+            <div class="cat__card__body__text">
+              Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 col__cat__card">
+        <div class="cat__card">
+          <img loading="lazy" class="cat__card__head__pic" src="./img/cat-3.png" alt="Service 3">
+          <div class="cat__card__body">
+            <div class="cat__card__body__title">
+              Eventos
+            </div>
+            <div class="cat__card__body__text">
+              Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PASOS -->
+  <div class="steps">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 img__steps">
+        <img loading="lazy" class="steps__pic" src="./img/steps-images.png" alt="Steps image">
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="section__title">
+          FÁCIL Y RÁPIDO
+        </div>
+        <div class="section__main__title__right">
+          Reserva con nosotros en tres pasos
+        </div>
+        <div class="row element-step">
+          <div class="col-lg-9 col-sm-9">
+            <div class="element__step__title">
+              Elige el servicio que necesitas
+            </div>
+            <div class="element__step__text">
+              Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Urna, tortor tempus.
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <img loading="lazy" class="element__steps__pic" src="./img/step-1.png" alt="Step 1">
+          </div>
+          <div class="col-lg-9 col-sm-9">
+            <div class="element__step__title">
+              Elige la fecha y hora de la reserva
+            </div>
+            <div class="element__step__text">
+              Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Urna, tortor tempus.
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <img loading="lazy" class="element__steps__pic" src="./img/step-2.png" alt="Step 2">
+          </div>
+          <div class="col-lg-9 col-sm-9">
+            <div class="element__step__title">
+              Digita tus datos personales
+            </div>
+            <div class="element__step__text">
+              Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Urna, tortor tempus.
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <img loading="lazy" class="element__steps__pic" src="./img/step-3.png" alt="Step 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TESTIMONIOS -->
+  <div class="testimonies">
+    <div class="people">
+      <div class="row">
+        <div class="col-lg-5 col-sm-12">
+          <div class="section__title">TESTIMONIOS</div>
+          <div class="section__main__title__left">¿Qué dicen <br> nuestros usuarios?</div>
+        </div>
+        <div class="col-lg-7 col-sm-12">
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="partners">
+    </div>
+  </div>
+  <!-- CONTACT US -->
+  <div class="contact__us">
+    <div class="square__contact__us">
+      <div class="section__main__title">Contáctanos</div>
+      <br>
+      <div class="contactus__paragraph">
+        Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing
+      </div>
+      <br>
+      <form class="contactus__form">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-user"></i></div>
+          </div>
+          <input type="text" class="form-control" placeholder="Nombre completo">
+        </div>
+        <br>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+          </div>
+          <input type="text" class="form-control" placeholder="Correo electrónico">
+        </div>
+        <br>
+        <button type="submit" class="btn__contact__form col-md-8">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="row">
+      <div class="col-lg-3 col-sm-3">
+        <img class="footer__pic" src="./img/Reservario.png" alt="Logo">
+      </div>
+      <div class="col-lg-6 col-sm-6">
+      </div>
+      <div class="col-lg-3 col-sm-3">
+        <div class="social__media__footer">
+          <button class="social__media"><i class="fab fa-instagram"></i></button>
+          <button class="social__media"><i class="fab fa-facebook"></i></button>
+          <button class="social__media"><i class="fab fa-twitter"></i></button>
+        </div>
+      </div>
+    </div>
+    <div>
+      Copyright © 2021 - Reservario: Sin filas, sin afán
+    </div>
+  </div>
+
+  <!-- Script para el manejo de la aplicacion -->
+  <script type="module" src="javascripts/app.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

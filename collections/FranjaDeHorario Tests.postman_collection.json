@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "86a0b72f-9a79-4f27-8042-25deab5a0d95",
+		"name": "FranjaDeHorario Tests",
+		"description": "Colección de pruebas sobre el recurso FranjaDeHorario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear una franjaDeHorario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_id_franjaDeHorario\", data.insertedId);\r",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"horaApertura\": \"2021-12-17T17:00:00.000+00:00\",\r\n    \"horaCierre\": \"2021-12-17T23:30:00.000+00:00\",\r\n    \"capacidadTotal\": 10,\r\n    \"capacidadActual\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario"
+					]
+				},
+				"description": "Crea una nueva franjaDeHorario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una franjaDeHorario 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_id_franjaDeHorario2\", data.insertedId);\r",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"horaApertura\": \"2021-12-18T15:00:00.000+00:00\",\r\n    \"horaCierre\": \"2021-12-18T23:00:00.000+00:00\",\r\n    \"capacidadTotal\": 12,\r\n    \"capacidadActual\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario"
+					]
+				},
+				"description": "Crea otra franjaDeHorario. El Id es inicializado por la BD y se debe ver en la respuesta. Esta segunda franjaDeHorario se utiliza para probar la petición de consultar todas las franjasDeHorario.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las franjasDeHorario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el Get All\"] = responseCode.code === 200;\r",
+							"tests[\"Cantidad de franjasDeHorario\"] = data.length > 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario"
+					]
+				},
+				"description": "Consulta todas las franjasDeHorario de la aplicación. La petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de franjasDeHorario en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una franjaDeHorario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/{{new_id_franjaDeHorario}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"{{new_id_franjaDeHorario}}"
+					]
+				},
+				"description": "Consulta una franjaDeHorario de la aplicación. La petición no tiene cuerpo. Se envía el id de la franjaDeHorario deseada en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una franjaDeHorario que no existe Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No consulta con id que no existe\"] = responseCode.code === 404; "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/000000000000000000000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"000000000000000000000000"
+					]
+				},
+				"description": "Consulta una franjaDeHorario que no existe en la aplicación. Para la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar una franjaDeHorario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"horaApertura\": \"2021-12-17T18:00:00.000+00:00\",\r\n    \"horaCierre\": \"2021-12-17T23:45:00.000+00:00\",\r\n    \"capacidadTotal\": 20,\r\n    \"capacidadActual\": 13\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/{{new_id_franjaDeHorario}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"{{new_id_franjaDeHorario}}"
+					]
+				},
+				"description": "Actualiza una franjaDeHorario existente. Se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar una franjaDeHorarioque no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No actualiza con id que no existe\"] = responseCode.code === 404;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"horaApertura\": \"2021-12-17T18:00:00.000+00:00\",\r\n    \"horaCierre\": \"2021-12-17T23:45:00.000+00:00\",\r\n    \"capacidadTotal\": 20,\r\n    \"capacidadActual\": 13\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/000000000000000000000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"000000000000000000000000"
+					]
+				},
+				"description": "Actualiza una franjaaDeHorario que no existe. Para la prueba se verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una franjaDeHorario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/{{new_id_franjaDeHorario}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"{{new_id_franjaDeHorario}}"
+					]
+				},
+				"description": "Borra una franjaDeHorario. Se envía el id de la franjaDeHorario creada anteriormente.\r\n\r\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una franjaDeHorario 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/{{new_id_franjaDeHorario2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"{{new_id_franjaDeHorario2}}"
+					]
+				},
+				"description": "Borra una franjaDeHorario. Se envía el id de la franjaDeHorario creada anteriormente.\r\n\r\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una franjaDeHorario que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No borra con id que no existe\"] = responseCode.code === 404;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/franjasDeHorario/000000000000000000000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"franjasDeHorario",
+						"000000000000000000000000"
+					]
+				},
+				"description": "Borra una franjaDeHorario que no existe en la aplicación. Para la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
